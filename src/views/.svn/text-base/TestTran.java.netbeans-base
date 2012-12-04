@@ -1,0 +1,13 @@
+package views;
+
+import creamy.activity.Activity;
+import creamy.activity.TitledActivity;
+
+public class TestTran extends TitledActivity {
+
+    public void initialize() {}
+
+    public String title() {
+        return "Tran";
+    }
+}

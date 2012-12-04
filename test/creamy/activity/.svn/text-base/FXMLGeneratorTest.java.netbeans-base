@@ -1,0 +1,35 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package creamy.activity;
+
+import java.lang.reflect.Field;
+import java.util.HashMap;
+import java.util.Map;
+import org.junit.*;
+import static org.junit.Assert.*;
+
+/**
+ *
+ * @author ATakahashi
+ */
+public class FXMLGeneratorTest {
+    
+    public FXMLGeneratorTest() {
+    }
+
+    /**
+     * Test of generate method, of class FXMLGenerator.
+     */
+    @Test
+    public void testGenerate() {
+        System.out.println("generate");
+        String name = "TestActivity.vm";
+        Map<Field, Object> params = new HashMap<Field, Object>();
+        FXMLGenerator instance = new FXMLGenerator();
+        String expResult = "";
+        String result = instance.generate(name, params);
+        assertEquals(expResult, result);
+    }
+}

@@ -1,0 +1,25 @@
+package creamy.scene.control;
+
+import creamy.browser.Broker;
+import creamy.browser.RequestHelper;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.control.Button;
+
+public class CFSubmitButton extends Button implements FormRequest {
+    
+    private RequestHelper helper;
+    
+    public CFSubmitButton() {
+        helper = new RequestHelper(this);
+        
+        this.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                Broker broker = helper.getBroker();
+                if (broker == null) return;
+                broker.sendRequest(CFSubmitButton.this);
+            }
+        });
+    }
+}

@@ -1,0 +1,55 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package creamy.scene.control;
+
+import java.text.Format;
+import javafx.scene.control.TextFieldBuilder;
+
+/**
+ *
+ * @author ahayama
+ */
+public class CFTextFieldBuilder<B extends CFTextFieldBuilder<B>> extends TextFieldBuilder<B> {
+    
+    private String name;
+    private Object value;
+    private Format format;
+    
+    protected CFTextFieldBuilder() {
+    }
+    
+    public static CFTextFieldBuilder<?> create() {
+        return new CFTextFieldBuilder();
+    }
+
+    public CFTextFieldBuilder<B> name(String s) {
+        name = s;
+        return this;
+    }
+
+    public CFTextFieldBuilder<B> value(Object value) {
+        this.value = value;
+        return this;
+    }
+    
+    public CFTextFieldBuilder<B> format(Format format) {
+        this.format = format;
+        return this;
+    }
+
+    public void applyTo(CFTextField textfield) {
+        super.applyTo(textfield);
+        textfield.setCFName(name);
+        textfield.setFormat(format);
+        textfield.setCFValue(value);
+    }
+    
+    @Override
+    public CFTextField build() {
+        CFTextField textfield = new CFTextField(name);
+        applyTo(textfield);
+        return textfield;
+    }
+}

@@ -1,0 +1,51 @@
+package creamy.activity.requestor;
+
+import creamy.browser.Broker;
+import java.util.Map;
+
+/**
+ *
+ * @author miyabetaiji
+ */
+public abstract class Request<T> {
+    protected Broker broker;
+    protected String path;
+    protected Map<String,Object> params;
+    protected CallBack<T> successCallBack;
+    protected CallBack<T> failCallBack;
+
+    Request(Broker broker) { this.broker = broker; }
+
+    public String getPath() { return this.path; }
+
+    public void setPath(String path) { this.path = path; }
+
+    public Map<String,Object> getParams() { return this.params; }
+
+    public void setParams(Map<String,Object> params) { this.params = params; }
+
+    public Request<T> params(Map<String,Object> params) {
+        setParams(params);
+        return this;
+    }
+
+    public CallBack<T> getOnSuccess() { return this.successCallBack; }
+
+    public void setOnSuccess(CallBack<T> callBack) { this.successCallBack = callBack; }
+
+    public Request<T> onSuccess(CallBack<T> callBack) {
+        setOnSuccess(callBack);
+        return this;
+    }
+
+    public CallBack<T> getOnFail() { return this.failCallBack; }
+
+    public void setOnFail(CallBack<T> callBack) { this.failCallBack = callBack; }
+
+    public Request<T> onFail(CallBack<T> callBack) {
+        setOnFail(callBack);
+        return this;
+    }
+
+    public abstract void execute();
+}

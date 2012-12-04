@@ -1,0 +1,11 @@
+K 10
+svn:ignore
+V 130
+.Requestor.java.swp
+.Util.java.swp
+.FXMLGenerator.java.swp
+.RenderParameter.java.swp
+.ActivityFactory.java.swp
+.Activity.java.swp
+
+END

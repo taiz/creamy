@@ -1,0 +1,30 @@
+package views;
+
+import creamy.activity.Activity;
+import creamy.activity.AvailableActivity;
+
+public class Main extends AvailableActivity {
+
+    //public String title() { return "Creamy"; }
+    
+    /*--------------------------------------------------------------------------
+     * Testing
+     *------------------------------------------------------------------------*/
+    public void testHaveInstancesOfChild() {
+        assert !childActivities.isEmpty();
+        assert (null != childActivities.get(TestActivity.class));
+    }
+    
+    public void testChildMustHaveParent() {
+        Activity child = childActivities.get(TestActivity.class).get(0);
+        assert child.getParent() != null;
+        assert child.getParent() == this;
+    }
+    
+    public void testTitleMustBeCuscading() {
+        AvailableActivity child = (AvailableActivity)childActivities.get(TestActivity.class).get(0);
+        String title = getTitle() + ":" + child.getTitle();
+        System.out.println(title);
+        assert getTitle().equals(title);
+    }
+}

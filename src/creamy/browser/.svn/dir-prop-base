@@ -1,0 +1,18 @@
+K 10
+svn:ignore
+V 312
+.BrowserPanel.java.swp
+.BrowserContent.java.swp
+.BrowserBody.java.swp
+.DefaultHeader.java.swp
+.Browser.java.swp
+.TabBrowser.java.swp
+.Broker.java.swp
+.TabBrowserPanel.java.swp
+.TabBrowserContent.java.swp
+.TransitionManager.java.swp
+.RequestHelper.java.swp
+.HandlerRegistrar.java.swp
+.HandlerConstructor.java.swp
+
+END

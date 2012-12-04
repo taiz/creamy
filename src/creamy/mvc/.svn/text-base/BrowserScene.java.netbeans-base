@@ -1,0 +1,32 @@
+package creamy.mvc;
+
+import creamy.activity.TitledActivity;
+import javafx.scene.Node;
+
+public class BrowserScene {
+    private TitledActivity activity;
+    private Node scene;
+    
+    public BrowserScene() {}
+    
+    public BrowserScene(TitledActivity activity, Node scene) {
+        this.activity = activity;
+        this.scene = scene;
+    }
+
+    public TitledActivity getActivity() {
+        return activity;
+    }
+
+    public void setActivity(TitledActivity activity) {
+        this.activity = activity;
+    }
+
+    public Node getScene() {
+        return scene;
+    }
+
+    public void setScene(Node scene) {
+        this.scene = scene;
+    }
+}

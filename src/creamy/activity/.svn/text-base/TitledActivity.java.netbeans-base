@@ -1,0 +1,33 @@
+package creamy.activity;
+
+import java.lang.reflect.Field;
+import java.util.Map;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
+public abstract class TitledActivity extends AvailableActivity implements Titled {
+    private static final String DELIMITER = ":";
+    private StringProperty title = new SimpleStringProperty();
+    
+    public void initialize(Activity parent, Map<Field,Object> params) {
+        super.initialize(parent, params);
+        this.title.set(title());
+    }
+    
+    // recursive
+    public String getTitle() {
+        String concatTitle = title.get();
+        
+        if (childActivities.isEmpty()) {
+            return concatTitle;
+        }
+        for (Class<? extends Activity> child : childActivities.keySet()) {
+            Activity childActivity = childActivities.get(child).get(0);
+            if (childActivity instanceof TitledActivity) {
+                concatTitle = concatTitle + DELIMITER + 
+                        ((TitledActivity)childActivity).getTitle();
+            }
+        }
+        return concatTitle;
+    }
+}
