@@ -11,7 +11,7 @@
   </resources>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="creamy.jar" size="198796" download="eager" />
+    <jar href="creamy.jar" size="147882" download="eager" />
     <jar href="lib/ebean-2.7.3.jar" size="1976606" download="eager" />
     <jar href="lib/hibernate-validator-4.3.0.Final.jar" size="476575" download="eager" />
     <jar href="lib/jsonic-1.2.11.jar" size="213717" download="eager" />
