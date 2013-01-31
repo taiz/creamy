@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<BorderPane id="BorderPane" maxHeight="-1.0" maxWidth="-1.0" minHeight="-1.0" minWidth="-1.0" onMouseEntered="#strongDeleteButton" onMouseExited="#weekDeleteButton" prefHeight="-1.0" prefWidth="-1.0" styleClass="null" xmlns:fx="http://javafx.com/fxml" fx:controller="views.projectcontroller.Group">
+  <center>
+    <StackPane fx:id="titlePane" alignment="CENTER_LEFT" onMouseClicked="#rename" prefHeight="-1.0" prefWidth="-1.0" BorderPane.alignment="CENTER_LEFT">
+      <children>
+        <Label fx:id="titleLabel" alignment="CENTER_LEFT" styleClass="group-title" text="$group" StackPane.alignment="CENTER_LEFT" />
+      </children>
+    </StackPane>
+  </center>
+  <right>
+    <ImageView fx:id="settingsButton" fitHeight="20.0" fitWidth="20.0" onMouseClicked="#showSettingMenu" pickOnBounds="true" preserveRatio="true" styleClass="options-button-off" BorderPane.alignment="CENTER" />
+  </right>
+  <stylesheets>
+    <URL value="@../applicationcontroller/Common.css" />
+  </stylesheets>
+</BorderPane>

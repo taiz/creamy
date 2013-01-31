@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<HBox fx:id="breadcrumbPane" alignment="CENTER_LEFT" minHeight="45.0" prefHeight="40.0" prefWidth="774.0" style="&#10;" styleClass="breadcrumb" xmlns:fx="http://javafx.com/fxml" fx:controller="views.applicationcontroller.BreadCrumb">
+  <children>
+    <Label id="top" fx:id="breadcrumbFirst" styleClass="breadcrumb-label" text="$first">
+      <font>
+        <Font size="20.0" fx:id="x4" />
+      </font>
+      <HBox.margin>
+        <Insets left="15.0" />
+      </HBox.margin>
+    </Label>
+    <HBox prefHeight="-1.0" prefWidth="-1.0">
+      <children>
+        <Polygon rotate="90.0" scaleX="0.39999999999960006" scaleY="0.30000029999999245" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="triangle">
+          <effect>
+            <BoxBlur />
+          </effect>
+          <fill>
+            <Color blue="0.769" green="0.788" red="0.612" fx:id="x5" />
+          </fill>
+          <points>
+            <Double fx:value="-50.0" />
+            <Double fx:value="40.0" />
+            <Double fx:value="50.0" />
+            <Double fx:value="40.0" />
+            <Double fx:value="0.0" />
+            <Double fx:value="-60.0" />
+          </points>
+        </Polygon>
+      </children>
+    </HBox>
+    <Label id="breadcrumbTop" fx:id="breadcrumbSecond" font="$x4" styleClass="breadcrumb-label" text="$second" />
+    <HBox prefHeight="-1.0" prefWidth="-1.0">
+      <children>
+        <Polygon fill="$x5" rotate="90.0" scaleX="0.4" scaleY="0.3" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="triangle">
+          <points>
+            <Double fx:value="-50.0" />
+            <Double fx:value="40.0" />
+            <Double fx:value="50.0" />
+            <Double fx:value="40.0" />
+            <Double fx:value="0.0" />
+            <Double fx:value="-60.0" />
+          </points>
+        </Polygon>
+      </children>
+    </HBox>
+    <!--% #if( $projectId ) -->
+    <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+      <children>
+        <Button fx:id="teamBtn" defaultButton="true" mnemonicParsing="false" onMouseClicked="#showTeamMenu" text="Project's team" />
+      </children>
+      <padding>
+        <Insets right="10.0" fx:id="x3" />
+      </padding>
+    </HBox>
+    <!--% #end -->
+  </children>
+  <stylesheets>
+    <URL value="@Main.css" />
+  </stylesheets>
+</HBox>

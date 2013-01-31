@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import creamy.scene.control.*?>
+<?import creamy.scene.layout.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.75" prefHeight="-1.0" prefWidth="370.0" spacing="10.0" style="-fx-background-color: black;" xmlns:fx="http://javafx.com/fxml" fx:controller="views.projectcontroller.TeamMenu">
+  <children>
+    <BorderPane prefHeight="-1.0" prefWidth="-1.0">
+      <center>
+        <VBox fx:id="memberList" prefHeight="-1.0" prefWidth="-1.0" spacing="5.0">
+          <children>
+            <!--%
+            #foreach( $user in $projectMembers )
+              #renderWithParams( "TeamItem", ["user", "isMember", "projectId"], [$user, true, $projectId] )
+            #end
+            -->
+          </children>
+          <BorderPane.margin>
+            <Insets top="5.0" fx:id="x1" />
+          </BorderPane.margin>
+        </VBox>
+      </center>
+      <top>
+        <Label style="-fx-font-weight: bold;&#10;-fx-font-size: 16;" text="Team Mates" textFill="WHITE">
+          <font>
+            <Font size="16.0" fx:id="x2" />
+          </font>
+        </Label>
+      </top>
+      <VBox.margin>
+        <Insets left="5.0" top="5.0" />
+      </VBox.margin>
+    </BorderPane>
+    <BorderPane prefHeight="-1.0" prefWidth="-1.0">
+      <center>
+        <VBox fx:id="remainList" prefHeight="-1.0" prefWidth="-1.0" spacing="5.0" BorderPane.margin="$x1">
+          <children>
+            <!--%
+            #foreach( $user in $remainUsers )
+              #renderWithParams( "TeamItem", ["user", "isMember", "projectId"], [$user, false, $projectId] )
+            #end
+            -->
+          </children>
+        </VBox>
+      </center>
+      <top>
+        <Label font="$x2" style="-fx-font-weight: bold;&#10;-fx-font-size: 16;" text="Add a team mate" textFill="WHITE" />
+      </top>
+      <VBox.margin>
+        <Insets bottom="5.0" left="5.0" />
+      </VBox.margin>
+    </BorderPane>
+  </children>
+</VBox>

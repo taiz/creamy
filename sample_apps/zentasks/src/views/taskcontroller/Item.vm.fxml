@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<BorderPane id="root" prefHeight="30.0" prefWidth="750.0" xmlns:fx="http://javafx.com/fxml" fx:controller="views.taskcontroller.Item">
+  <!--%
+  <fx:define>
+    <Integer fx:id="taskId" fx:value="$task.id" />
+  </fx:define>
+  -->
+  <center>
+    <HBox alignment="CENTER_LEFT" prefHeight="-1.0" prefWidth="-1.0">
+      <children>
+        <Label fx:id="titleLabel" text="$task.title" />
+        <HBox id="detailPane" fx:id="detailsPane" alignment="CENTER_RIGHT" prefHeight="-1.0" prefWidth="-1.0" spacing="10.0" HBox.hgrow="ALWAYS">
+          <padding>
+            <Insets right="15.0" />
+          </padding>
+        </HBox>
+      </children>
+      <padding>
+        <Insets left="10.0" fx:id="x1" />
+      </padding>
+    </HBox>
+  </center>
+  <!--% #if ( $editable ) -->
+  <left>
+    <CheckBox id="doneCheck" fx:id="doneCheckBox" mnemonicParsing="false" selected="$task.done" styleClass="white-check-box" text="" BorderPane.alignment="CENTER">
+      <BorderPane.margin>
+        <Insets left="10.0" fx:id="x1" />
+      </BorderPane.margin>
+    </CheckBox>
+  </left>
+  <right>
+    <ImageView fx:id="removeBtn" styleClass="delete-button-off" fitHeight="17.0" fitWidth="17.0" onMouseClicked="#removeTask" onMouseEntered="#changeRemoveBtnOn" onMouseExited="#changeRemoveBtnOff" opacity="1.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+      <image>
+        <Image url="@../icons/delete-off.png" preserveRatio="false" smooth="false" />
+      </image>
+      <BorderPane.margin>
+        <Insets right="5.0" />
+      </BorderPane.margin>
+    </ImageView>
+  </right>
+  <!--% #end -->
+  <stylesheets>
+    <URL value="@Item.css" />
+  </stylesheets>
+  <top>
+    <Separator prefWidth="200.0" />
+  </top>
+</BorderPane>

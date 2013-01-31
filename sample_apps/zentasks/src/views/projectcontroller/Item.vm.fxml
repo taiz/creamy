@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<BorderPane id="BorderPane" fx:id="projectItem" maxHeight="-1.0" maxWidth="-1.0" minHeight="-1.0" minWidth="-1.0" onMouseEntered="#showDeleteButton" onMouseExited="#hideDeleteButton" prefHeight="-1.0" prefWidth="-1.0" styleClass="null" xmlns:fx="http://javafx.com/fxml" fx:controller="views.projectcontroller.Item">
+  <!--%
+  <fx:define>
+    <Integer fx:id="projectId" fx:value="$project.id" />
+  </fx:define>
+  -->
+  <center>
+    <StackPane id="titilePane" fx:id="titlePane" onMouseClicked="#rename" prefHeight="-1.0" prefWidth="-1.0" BorderPane.alignment="CENTER_LEFT">
+      <children>
+        <Hyperlink id="projectLink" fx:id="titleLabel" onAction="#showProject" text="$project.name" StackPane.alignment="CENTER_LEFT" />
+      </children>
+    </StackPane>
+  </center>
+  <right>
+    <ImageView id="settingsButton" fx:id="deleteButton" fitHeight="17.0" fitWidth="17.0" onMouseClicked="#deleteProject" pickOnBounds="true" preserveRatio="true" styleClass="delete-button-off-opa" BorderPane.alignment="BOTTOM_CENTER" />
+  </right>
+  <stylesheets>
+    <URL value="@../applicationcontroller/Common.css" />
+  </stylesheets>
+</BorderPane>

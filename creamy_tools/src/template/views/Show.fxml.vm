@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import creamy.scene.control.*?>
+<?import creamy.scene.layout.*?>
+
+#set( $activity = $scprm.packageName + ".Show" )
+<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml" fx:controller="$activity">
+  <center>
+    <Pane>
+      <children>
+        <VBox spacing="10.0">
+          <children>
+            <GridPane>
+              <children>
+#set( $i = 0 )
+#foreach( $field in $scprm.fields )
+                <Label text="$field.getUpName()" GridPane.columnIndex="0" GridPane.rowIndex="$i" />
+#set( $i = $i + 1 )
+#end
+#set( $i = 0 )
+#foreach( $field in $scprm.fields )
+                <Label text=":" GridPane.columnIndex="1" GridPane.rowIndex="$i" />
+#set( $i = $i + 1 )
+#end
+#set( $i = 0 )
+#foreach( $field in $scprm.fields )
+#set( $getter = "$" + $scprm.modelVariable + "." + $field.name )
+                <Label text="$getter" GridPane.columnIndex="2" GridPane.rowIndex="$i" />
+#set( $i = $i + 1 )
+#end
+              </children>
+              <columnConstraints>
+                <ColumnConstraints hgrow="NEVER" prefWidth="120.0" />
+                <ColumnConstraints hgrow="NEVER" prefWidth="10.0" />
+                <ColumnConstraints hgrow="NEVER" />
+              </columnConstraints>
+              <rowConstraints>
+#foreach( $field in $scprm.fields )
+                <RowConstraints vgrow="NEVER" prefHeight="30.0" />
+#end
+              </rowConstraints>
+            </GridPane>
+            <HBox alignment="CENTER_LEFT">
+              <children>
+#set( $_editPath = "/" + $scprm.basePath + "/edit/" )
+#set( $getter = "$" + $scprm.modelVariable + ".id" )
+                <!--% \#set( $editPath = "$_editPath" + $getter ) -->
+                <CFHyperlink path="$editPath" text="Edit" />
+                <Label text="|" />
+                <CFHyperlink path="/$scprm.basePath/list" text="Back" />
+              </children>
+            </HBox>
+          </children>
+        </VBox>
+      </children>
+      <BorderPane.margin>
+        <Insets left="10.0" top="10.0" />
+      </BorderPane.margin>
+    </Pane>
+  </center>
+  <top>
+    <Text text="Details of Model">
+      <font>
+        <Font size="24.0" />
+      </font>
+      <BorderPane.margin>
+        <Insets left="10.0" top="10.0" />
+      </BorderPane.margin>
+    </Text>
+  </top>
+</BorderPane>

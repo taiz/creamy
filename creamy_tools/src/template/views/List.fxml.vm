@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import creamy.scene.control.*?>
+<?import creamy.scene.layout.*?>
+
+#set( $activity = $scprm.packageName + ".List" )
+<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml" fx:controller="$activity">
+  <center>
+    <VBox>
+      <children>
+        <GridPane>
+          <children>
+#set( $j = 0 )
+#foreach( $field in $scprm.fields )
+            <Label style="-fx-font-weight: bold;" text="$field.getUpName()" GridPane.columnIndex="$j" GridPane.rowIndex="0" />
+#set( $j = $j + 1 )
+#end
+#set( $item = "$" + $scprm.modelVariable )
+#set( $list = "$listOf" + $scprm.modelName )
+            <!--%
+            \#set( $i = 1 )
+            \#foreach( $item in $list )
+#set( $j = 0 )
+#foreach( $field in $scprm.fields )
+#set( $getter = "$" + "!" + $scprm.modelVariable + "." + $field.name )
+              <Label text="$getter" GridPane.columnIndex="$j" GridPane.rowIndex="$i" />
+#set( $j = $j + 1 )
+#end
+              <HBox alignment="CENTER_LEFT" spacing="3.0" GridPane.columnIndex="$j" GridPane.rowIndex="$i">
+                <children>
+#set( $_basePath = "/" + $scprm.basePath )
+#set( $getter = "$" + $scprm.modelVariable + ".id" )
+                  \#set( $showPath = "$_basePath" + "/show/" + $getter )
+                  <CFHyperlink path="$showPath" text="Show" />
+                  \#set( $editPath = "$_basePath" + "/edit/" + $getter )
+                  <CFHyperlink path="$editPath" text="Edit" />
+                  \#set( $deletePath = "$_basePath" + "/delete/" + $getter )
+                  <CFHyperlink path="$deletePath" text="Delete" />
+                </children>
+              </HBox>
+            \#set( $i = $i + 1 )
+            \#end
+            -->
+          </children>
+          <columnConstraints>
+#foreach( $field in $scprm.fields )
+            <ColumnConstraints hgrow="NEVER" prefWidth="100.0" />
+#end
+            <ColumnConstraints hgrow="NEVER" />
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints vgrow="NEVER" prefHeight="25.0" />
+            <!--%
+            \#foreach( \$item in \$list )
+            <RowConstraints vgrow="NEVER" prefHeight="30.0" />
+            \#end
+            -->
+          </rowConstraints>
+        </GridPane>
+#set( $newPath = "/" + $scprm.basePath + "/make" )
+        <CFHyperlink path="$newPath" text="New $scprm.modelName">
+          <VBox.margin>
+            <Insets top="10.0" />
+          </VBox.margin>
+        </CFHyperlink>
+      </children>
+      <BorderPane.margin>
+        <Insets left="10.0" top="10.0" fx:id="x1" />
+      </BorderPane.margin>
+    </VBox>
+  </center>
+  <top>
+    <Text text="Listing $scprm.modelName" BorderPane.margin="$x1">
+      <font>
+        <Font size="24.0" />
+      </font>
+    </Text>
+  </top>
+</BorderPane>

@@ -1,0 +1,55 @@
+#macro( renderInputControl $field $i )
+#set( $type = $field.type.getName() )
+#set( $getter = "$" + "!" + $scprm.modelVariable + "." + $field.name )
+#if( $type == "java.lang.Boolean" )
+        <CFCheckBox name="$field.name" selected="$getter" GridPane.columnIndex="1" GridPane.rowIndex="$i" />
+#else
+        <CFTextField name="$field.name" text="$getter" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="$i" />
+#end
+#end
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import creamy.scene.control.*?>
+<?import creamy.scene.layout.*?>
+
+#set( $activity = $scprm.packageName + ".Form" )
+<CFVForm path="$postPath" spacing="10.0" xmlns:fx="http://javafx.com/fxml" fx:controller="$activity">
+  <children>
+    <GridPane>
+      <children>
+#set( $i = 0 )
+#foreach( $field in $scprm.fields )
+        <Label text="$field.getUpName()" GridPane.columnIndex="0" GridPane.rowIndex="$i" />
+#set( $i = $i + 1 )
+#end
+#set( $i = 0 )
+#foreach( $field in $scprm.fields )
+#renderInputControl( $field $i )
+#set( $i = $i + 1 )
+#end
+      </children>
+      <columnConstraints>
+        <ColumnConstraints hgrow="NEVER" prefWidth="120.0" />
+        <ColumnConstraints hgrow="NEVER" />
+      </columnConstraints>
+      <rowConstraints>
+        #foreach( $field in $scprm.fields )
+        <RowConstraints vgrow="NEVER" prefHeight="30.0" />
+        #end
+      </rowConstraints>
+    </GridPane>
+    <VBox alignment="TOP_LEFT" spacing="10.0">
+      <children>
+        <CFSubmitButton text="Create $scprm.modelName" />
+        <CFHyperlink path="/$scprm.basePath/list" text="Back" />
+      </children>
+    </VBox>
+  </children>
+</CFVForm>

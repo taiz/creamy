@@ -1,0 +1,55 @@
+#macro( renderField $field)
+#set( $type = $field.type.getName() )
+#set( $stype = $field.type.getSimpleName() )
+#if( $type == "java.util.Date" )
+    @Temporal(javax.persistence.TemporalType.DATE)
+#end
+    private $stype $field.name;
+
+#end
+#macro( renderGetter $field)
+#set( $stype = $field.type.getSimpleName() )
+#set( $methodName = "get" + $field.getUpName() )
+    public $stype $methodName() {
+        return this.$field.name;
+    }
+#end
+#macro( renderSetter $field)
+#set( $stype = $field.type.getSimpleName() )
+#set( $methodName = "set" + $field.getUpName() )
+    public void $methodName($stype $field.name) {
+        this.$field.name = $field.name;
+    }
+#end
+package models;
+
+import java.util.*;
+import javax.persistence.*;
+import creamy.db.*;
+
+@Entity
+public class $scprm.modelName extends Model {
+    @Id
+    private Integer id;
+
+    public Integer getId() {
+        return this.id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+#foreach( $field in $scprm.fields )
+#renderField($field)
+#end
+#set( $type = $scprm.modelName + ".class" )
+    public static Finder<Integer,$scprm.modelName> find = new Finder<Integer,$scprm.modelName>(Integer.class,$type);
+
+#foreach( $field in $scprm.fields )
+#renderGetter($field)
+
+#renderSetter($field)
+
+#end
+}

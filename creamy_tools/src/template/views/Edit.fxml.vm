@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import creamy.scene.control.*?>
+<?import creamy.scene.layout.*?>
+
+#set( $activity = $scprm.packageName + ".Edit" )
+<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml" fx:controller="$activity">
+  <center>
+    <Pane>
+      <children>
+        <!--%
+#set( $_postPath = """/" + $scprm.basePath + "/update/""" )
+#set( $id = "$" + $scprm.modelVariable + ".id" )
+#set( $macro = "#renderWithParam" )
+        \#set( $path = $_postPath + $id )
+        $macro( "Form", "postPath", $path )
+        -->
+      </children>
+      <BorderPane.margin>
+        <Insets left="10.0" top="10.0" />
+      </BorderPane.margin>
+    </Pane>
+  </center>
+  <top>
+    <Text text="Edit $scprm.modelName">
+      <font>
+        <Font size="24.0" />
+      </font>
+      <BorderPane.margin>
+        <Insets left="10.0" top="10.0" />
+      </BorderPane.margin>
+    </Text>
+  </top>
+</BorderPane>

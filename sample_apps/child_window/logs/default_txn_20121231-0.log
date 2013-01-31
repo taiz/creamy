@@ -1,0 +1,61 @@
+txn[1001], 15:31:03.365, select t0.id c0, t0.name c1, t0.introduced c2, t0.discontinued c3         , t1.id c4, t1.name c5  from computer t0 left outer join company t1 on t1.id = t0.company_id   where lower(t0.name) like ?   order by t0.name  limit 6 
+txn[1001], 15:31:04.268, FindMany type[Computer] origin[D6DAPb.CAy8Wi.ByZNx2] exeMicros[902688] rows[5] name[] predicates[lower(t0.name) like ? ] bind[%%] 
+txn[1002], 15:31:04.984, select t0.id c0, t0.name c1, t0.introduced c2, t0.discontinued c3         , t1.id c4, t1.name c5  from computer t0 left outer join company t1 on t1.id = t0.company_id   where lower(t0.name) like ?   order by t0.name  limit 6 offset 5 
+txn[1002], 15:31:05.575, FindMany type[Computer] origin[D6DAPb.CAy8Wi.ByZNx2] exeMicros[590898] rows[5] name[] predicates[lower(t0.name) like ? ] bind[%%] 
+txn[1003], 15:31:19.150, select t0.id c0, t0.name c1  from company t0  order by t0.name 
+txn[1003], 15:31:19.169, FindMany type[Company] origin[SFRkk.B3u1ZI.BZBRoU] exeMicros[18423] rows[42] name[] predicates[] bind[] 
+txn[1004], 15:31:21.188, select t0.id c0, t0.name c1  from company t0 
+txn[1004], 15:31:21.198, FindMany type[Company] origin[C2QPRV.B3u1ZI.Bg6H1z] exeMicros[10118] rows[42] name[] predicates[] bind[] 
+txn[1005], 15:31:21.205, select t0.id c0, t0.name c1  from company t0 where t0.id = ?   
+txn[1005], 15:31:21.210, FindBean type[Company] origin[BqlK74.B3u1ZH.zv6Vt] exeMicros[4947] rows[1] bind[14] 
+txn[1006], 15:31:21.218, insert into computer (name, introduced, discontinued, company_id) values (?,?,?,?) 
+txn[1006], 15:31:21.222, Binding Insert [computer]  set[name=aaa, introduced=Wed Aug 01 00:00:00 JST 2012, discontinued=Thu Aug 02 00:00:00 JST 2012, company_id=14, ] 
+txn[1006], 15:31:21.228, Inserted [Computer] [575] 
+txn[1007], 15:31:21.245, select t0.id c0, t0.name c1, t0.introduced c2, t0.discontinued c3         , t1.id c4, t1.name c5  from computer t0 left outer join company t1 on t1.id = t0.company_id   where lower(t0.name) like ?  and lower(t1.name) like ?  and t0.introduced >= ?  and t0.introduced <= ?   order by t0.name  limit 6 
+txn[1007], 15:31:21.358, FindMany type[Computer] origin[D6DAPb.CAy8Wi.ByZNx2] exeMicros[112327] rows[1] name[] predicates[lower(t0.name) like ?  and lower(t1.name) like ?  and t0.introduced >= ?  and t0.introduced <= ? ] bind[%aaa%, %amiga corporation%, 2012-08-01 00:00:00.0, 2012-08-01 23:59:59.999] 
+txn[1008], 15:31:24.057, select t0.id c0, t0.name c1, t0.introduced c2, t0.discontinued c3         , t1.id c4, t1.name c5  from computer t0 left outer join company t1 on t1.id = t0.company_id   where lower(t0.name) like ?   order by t0.name  limit 6 
+txn[1008], 15:31:24.249, FindMany type[Computer] origin[D6DAPb.CAy8Wi.ByZNx2] exeMicros[191544] rows[5] name[] predicates[lower(t0.name) like ? ] bind[%%] 
+txn[1009], 15:31:24.267, select t0.id c0, t0.name c1, t0.introduced c2, t0.discontinued c3         , t1.id c4, t1.name c5  from computer t0 left outer join company t1 on t1.id = t0.company_id   where lower(t0.name) like ?   order by t0.name  limit 6 offset 5 
+txn[1009], 15:31:24.672, FindMany type[Computer] origin[D6DAPb.CAy8Wi.ByZNx2] exeMicros[404287] rows[5] name[] predicates[lower(t0.name) like ? ] bind[%%] 
+txn[1010], 15:31:25.483, select t0.id c0, t0.name c1, t0.introduced c2, t0.discontinued c3         , t1.id c4, t1.name c5  from computer t0 left outer join company t1 on t1.id = t0.company_id   where lower(t0.name) like ?   order by t0.name  limit 6 
+txn[1010], 15:31:25.707, FindMany type[Computer] origin[D6DAPb.CAy8Wi.ByZNx2] exeMicros[224535] rows[5] name[] predicates[lower(t0.name) like ? ] bind[%%] 
+txn[1011], 15:31:25.727, select t0.id c0, t0.name c1, t0.introduced c2, t0.discontinued c3         , t1.id c4, t1.name c5  from computer t0 left outer join company t1 on t1.id = t0.company_id   where lower(t0.name) like ?   order by t0.name  limit 6 offset 5 
+txn[1011], 15:31:26.009, FindMany type[Computer] origin[D6DAPb.CAy8Wi.ByZNx2] exeMicros[281753] rows[5] name[] predicates[lower(t0.name) like ? ] bind[%%] 
+txn[1012], 15:31:33.106, select t0.id c0, t0.name c1, t0.introduced c2, t0.discontinued c3         , t1.id c4, t1.name c5  from computer t0 left outer join company t1 on t1.id = t0.company_id   where lower(t0.name) like ?   order by t0.name  limit 6 
+txn[1012], 15:31:33.163, FindMany type[Computer] origin[D6DAPb.CAy8Wi.ByZNx2] exeMicros[57099] rows[0] name[] predicates[lower(t0.name) like ? ] bind[%abc%] 
+txn[1013], 15:31:40.380, select t0.id c0, t0.name c1, t0.introduced c2, t0.discontinued c3         , t1.id c4, t1.name c5  from computer t0 left outer join company t1 on t1.id = t0.company_id   where lower(t0.name) like ?  and lower(t1.name) like ?   order by t0.name  limit 6 
+txn[1013], 15:31:40.461, FindMany type[Computer] origin[D6DAPb.CAy8Wi.ByZNx2] exeMicros[80614] rows[5] name[] predicates[lower(t0.name) like ?  and lower(t1.name) like ? ] bind[%%, %apple%] 
+txn[1014], 15:31:40.477, select t0.id c0, t0.name c1, t0.introduced c2, t0.discontinued c3         , t1.id c4, t1.name c5  from computer t0 left outer join company t1 on t1.id = t0.company_id   where lower(t0.name) like ?  and lower(t1.name) like ?   order by t0.name  limit 6 offset 5 
+txn[1014], 15:31:40.583, FindMany type[Computer] origin[D6DAPb.CAy8Wi.ByZNx2] exeMicros[105805] rows[5] name[] predicates[lower(t0.name) like ?  and lower(t1.name) like ? ] bind[%%, %apple%] 
+txn[1001], 15:32:06.261, select t0.id c0, t0.name c1, t0.introduced c2, t0.discontinued c3         , t1.id c4, t1.name c5  from computer t0 left outer join company t1 on t1.id = t0.company_id   where lower(t0.name) like ?   order by t0.name  limit 6 
+txn[1001], 15:32:07.097, FindMany type[Computer] origin[D6DAPb.CAy8Wi.ByZNx2] exeMicros[835303] rows[5] name[] predicates[lower(t0.name) like ? ] bind[%%] 
+txn[1002], 15:32:07.897, select t0.id c0, t0.name c1, t0.introduced c2, t0.discontinued c3         , t1.id c4, t1.name c5  from computer t0 left outer join company t1 on t1.id = t0.company_id   where lower(t0.name) like ?   order by t0.name  limit 6 offset 5 
+txn[1002], 15:32:08.460, FindMany type[Computer] origin[D6DAPb.CAy8Wi.ByZNx2] exeMicros[563169] rows[5] name[] predicates[lower(t0.name) like ? ] bind[%%] 
+txn[1001], 15:32:28.296, select t0.id c0, t0.name c1, t0.introduced c2, t0.discontinued c3         , t1.id c4, t1.name c5  from computer t0 left outer join company t1 on t1.id = t0.company_id   where lower(t0.name) like ?   order by t0.name  limit 6 
+txn[1001], 15:32:28.993, FindMany type[Computer] origin[D6DAPb.CAy8Wi.ByZNx2] exeMicros[695958] rows[5] name[] predicates[lower(t0.name) like ? ] bind[%%] 
+txn[1002], 15:32:29.635, select t0.id c0, t0.name c1, t0.introduced c2, t0.discontinued c3         , t1.id c4, t1.name c5  from computer t0 left outer join company t1 on t1.id = t0.company_id   where lower(t0.name) like ?   order by t0.name  limit 6 offset 5 
+txn[1002], 15:32:30.198, FindMany type[Computer] origin[D6DAPb.CAy8Wi.ByZNx2] exeMicros[562710] rows[5] name[] predicates[lower(t0.name) like ? ] bind[%%] 
+txn[1001], 15:32:43.161, select t0.id c0, t0.name c1, t0.introduced c2, t0.discontinued c3         , t1.id c4, t1.name c5  from computer t0 left outer join company t1 on t1.id = t0.company_id   where lower(t0.name) like ?   order by t0.name  limit 6 
+txn[1001], 15:32:43.839, FindMany type[Computer] origin[D6DAPb.CAy8Wi.ByZNx2] exeMicros[677782] rows[5] name[] predicates[lower(t0.name) like ? ] bind[%%] 
+txn[1002], 15:32:44.538, select t0.id c0, t0.name c1, t0.introduced c2, t0.discontinued c3         , t1.id c4, t1.name c5  from computer t0 left outer join company t1 on t1.id = t0.company_id   where lower(t0.name) like ?   order by t0.name  limit 6 offset 5 
+txn[1002], 15:32:45.163, FindMany type[Computer] origin[D6DAPb.CAy8Wi.ByZNx2] exeMicros[624883] rows[5] name[] predicates[lower(t0.name) like ? ] bind[%%] 
+txn[1001], 15:33:29.458, select t0.id c0, t0.name c1, t0.introduced c2, t0.discontinued c3         , t1.id c4, t1.name c5  from computer t0 left outer join company t1 on t1.id = t0.company_id   where lower(t0.name) like ?   order by t0.name  limit 6 
+txn[1001], 15:33:30.153, FindMany type[Computer] origin[D6DAPb.CAy8Wi.ByZNx2] exeMicros[694785] rows[5] name[] predicates[lower(t0.name) like ? ] bind[%%] 
+txn[1002], 15:33:30.801, select t0.id c0, t0.name c1, t0.introduced c2, t0.discontinued c3         , t1.id c4, t1.name c5  from computer t0 left outer join company t1 on t1.id = t0.company_id   where lower(t0.name) like ?   order by t0.name  limit 6 offset 5 
+txn[1002], 15:33:31.383, FindMany type[Computer] origin[D6DAPb.CAy8Wi.ByZNx2] exeMicros[582359] rows[5] name[] predicates[lower(t0.name) like ? ] bind[%%] 
+txn[1003], 15:33:42.998, select t0.id c0, t0.name c1, t0.introduced c2, t0.discontinued c3         , t1.id c4, t1.name c5  from computer t0 left outer join company t1 on t1.id = t0.company_id   where lower(t0.name) like ?   order by t0.name  limit 6 
+txn[1003], 15:33:43.404, FindMany type[Computer] origin[D6DAPb.CAy8Wi.ByZNx2] exeMicros[406192] rows[5] name[] predicates[lower(t0.name) like ? ] bind[%%] 
+txn[1004], 15:33:43.427, select t0.id c0, t0.name c1, t0.introduced c2, t0.discontinued c3         , t1.id c4, t1.name c5  from computer t0 left outer join company t1 on t1.id = t0.company_id   where lower(t0.name) like ?   order by t0.name  limit 6 offset 5 
+txn[1004], 15:33:43.813, FindMany type[Computer] origin[D6DAPb.CAy8Wi.ByZNx2] exeMicros[386088] rows[5] name[] predicates[lower(t0.name) like ? ] bind[%%] 
+txn[1005], 15:33:47.502, select t0.id c0, t0.name c1, t0.introduced c2, t0.discontinued c3         , t1.id c4, t1.name c5  from computer t0 left outer join company t1 on t1.id = t0.company_id   where lower(t0.name) like ?   order by t0.name  limit 6 
+txn[1005], 15:33:47.717, FindMany type[Computer] origin[D6DAPb.CAy8Wi.ByZNx2] exeMicros[214940] rows[5] name[] predicates[lower(t0.name) like ? ] bind[%%] 
+txn[1006], 15:33:47.739, select t0.id c0, t0.name c1, t0.introduced c2, t0.discontinued c3         , t1.id c4, t1.name c5  from computer t0 left outer join company t1 on t1.id = t0.company_id   where lower(t0.name) like ?   order by t0.name  limit 6 offset 5 
+txn[1006], 15:33:48.006, FindMany type[Computer] origin[D6DAPb.CAy8Wi.ByZNx2] exeMicros[266682] rows[5] name[] predicates[lower(t0.name) like ? ] bind[%%] 
+txn[1001], 15:34:00.346, select t0.id c0, t0.name c1, t0.introduced c2, t0.discontinued c3         , t1.id c4, t1.name c5  from computer t0 left outer join company t1 on t1.id = t0.company_id   where lower(t0.name) like ?   order by t0.name  limit 6 
+txn[1001], 15:34:01.223, FindMany type[Computer] origin[D6DAPb.CAy8Wi.ByZNx2] exeMicros[876660] rows[5] name[] predicates[lower(t0.name) like ? ] bind[%%] 
+txn[1002], 15:34:02.135, select t0.id c0, t0.name c1, t0.introduced c2, t0.discontinued c3         , t1.id c4, t1.name c5  from computer t0 left outer join company t1 on t1.id = t0.company_id   where lower(t0.name) like ?   order by t0.name  limit 6 offset 5 
+txn[1002], 15:34:02.694, FindMany type[Computer] origin[D6DAPb.CAy8Wi.ByZNx2] exeMicros[559435] rows[5] name[] predicates[lower(t0.name) like ? ] bind[%%] 
+txn[1001], 15:43:36.167, select t0.id c0, t0.name c1, t0.introduced c2, t0.discontinued c3         , t1.id c4, t1.name c5  from computer t0 left outer join company t1 on t1.id = t0.company_id   where lower(t0.name) like ?   order by t0.name  limit 6 
+txn[1001], 15:43:36.861, FindMany type[Computer] origin[D6DAPb.CAy8Wi.ByZNx2] exeMicros[693470] rows[5] name[] predicates[lower(t0.name) like ? ] bind[%%] 
+txn[1002], 15:43:37.503, select t0.id c0, t0.name c1, t0.introduced c2, t0.discontinued c3         , t1.id c4, t1.name c5  from computer t0 left outer join company t1 on t1.id = t0.company_id   where lower(t0.name) like ?   order by t0.name  limit 6 offset 5 
+txn[1002], 15:43:38.036, FindMany type[Computer] origin[D6DAPb.CAy8Wi.ByZNx2] exeMicros[532665] rows[5] name[] predicates[lower(t0.name) like ? ] bind[%%] 

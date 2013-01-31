@@ -1,0 +1,22 @@
+package $scprm.entryPackageName;
+
+import creamy.browser.TabBrowser;
+import creamy.browser.control.*;
+import creamy.entrypoint.CreamyApp;
+import javafx.stage.Stage;
+
+public class $scprm.entryClassName extends CreamyApp {
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+    
+    @Override
+    public void start(Stage primaryStage) {
+        TabBrowser browser = new TabBrowser("");
+        browser.setMenuBar(new DefaultBrowserMenuBar());
+        browser.setHeader(new DefaultHeader());
+        primaryStage.setScene(browser);
+        primaryStage.show();
+    }
+}

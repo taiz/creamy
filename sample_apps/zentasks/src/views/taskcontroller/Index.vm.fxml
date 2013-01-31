@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import creamy.scene.control.*?>
+<?import creamy.scene.layout.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="-1.0" prefWidth="-1.0" xmlns:fx="http://javafx.com/fxml" fx:controller="views.taskcontroller.Index">
+  <!--%
+  <fx:define>
+    <Integer fx:id="projectId" fx:value="$project.id" />
+  </fx:define>
+  -->
+  <children>
+    <!--%
+      #renderWithParams( "views.applicationcontroller.BreadCrumb", ["first", "second", "projectId"], ["$project.folder", "$project.name", $project.id] )
+    -->
+    <VBox id="tasksPane" fx:id="foldersPane" fillWidth="true" minHeight="-1.0" minWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" spacing="15.0">
+      <children>
+      <!--%
+        #foreach( $folder in $folders.keySet() )
+          #renderWithParams( "Folder", ["project", "folder", "tasks"], [$project, $folder, $folders.get($folder)] )
+        #end
+      -->
+      </children>
+      <VBox.margin>
+        <Insets left="15.0" right="15.0" top="15.0" />
+      </VBox.margin>
+    </VBox>
+    <Button id="newFolder" fx:id="newFolderBtn" defaultButton="true" mnemonicParsing="false" onAction="#addNewFolder" styleClass="plus-button" text="New Folder">
+      <VBox.margin>
+        <Insets bottom="20.0" left="15.0" top="20.0" />
+      </VBox.margin>
+    </Button>
+  </children>
+  <stylesheets>
+    <URL value="@Index.css" />
+  </stylesheets>
+</VBox>

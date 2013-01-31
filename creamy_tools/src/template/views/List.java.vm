@@ -1,0 +1,11 @@
+package $scprm.packageName;
+
+import creamy.activity.AvailableActivity;
+import javafx.fxml.FXML;
+import models.$scprm.modelName;
+
+public class List extends AvailableActivity {
+    public void initialize() {
+        // Write initialize codes.
+    }
+}

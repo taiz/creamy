@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import creamy.scene.control.*?>
+<?import creamy.scene.layout.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<VBox id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="-1.0" prefWidth="750.0" style="" styleClass="task-board" xmlns:fx="http://javafx.com/fxml" fx:controller="views.taskcontroller.Folder">
+  <!--%
+  <fx:define>
+    <Integer fx:id="projectId" fx:value="$project.id" />
+    <String fx:id="folder" fx:value="$folder" />
+  </fx:define>
+  -->
+  <children>
+    <BorderPane prefHeight="30.0" prefWidth="200.0">
+      <center>
+        <HBox alignment="CENTER_LEFT" minWidth="50.0" prefHeight="30.0" prefWidth="-1.0" spacing="10.0" BorderPane.alignment="CENTER_LEFT">
+          <children>
+            <CheckBox id="completed" fx:id="allCheckBox" mnemonicParsing="false" styleClass="white-check-box" text="" />
+            <StackPane fx:id="titlePane" onMouseClicked="#renameFolder" alignment="CENTER_LEFT" prefHeight="-1.0" prefWidth="-1.0">
+              <children>
+                <Label id="groupName" fx:id="titleLabel" text="$folder" StackPane.alignment="CENTER_LEFT" />
+              </children>
+            </StackPane>
+            <StackPane prefHeight="-1.0" prefWidth="-1.0">
+              <children>
+                <Circle fill="DODGERBLUE" radius="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="" />
+                <Label id="remain" fx:id="remainLabel" style="-fx-text-fill: white;&#10;" text="0">
+                  <font>
+                    <Font size="10.0" />
+                  </font>
+                </Label>
+              </children>
+            </StackPane>
+          </children>
+          <padding>
+            <Insets left="10.0" fx:id="x1" />
+          </padding>
+        </HBox>
+      </center>
+      <right>
+        <ImageView fx:id="taskOperationBtn" fitHeight="20.0" fitWidth="20.0" onMouseClicked="#showMenu" onMouseEntered="#changeOperationBtnOn" onMouseExited="#changeOperationBtnOff" pickOnBounds="true" preserveRatio="true" smooth="true" BorderPane.alignment="CENTER">
+          <image>
+            <Image url="@../icons/options-off.png" preserveRatio="false" smooth="false" />
+          </image>
+          <BorderPane.margin>
+            <Insets right="5.0" fx:id="x2" />
+          </BorderPane.margin>
+        </ImageView>
+      </right>
+    </BorderPane>
+    <VBox fx:id="taskItemsPane" alignment="CENTER_LEFT" prefHeight="-1.0" prefWidth="-1.0" spacing="0.0" styleClass="task-item">
+      <children>
+        <!--%
+        #foreach( $task in $tasks )
+          #renderWithParams( "Item", ["task", "editable"], [$task, true] )
+        #end
+        -->
+      </children>
+    </VBox>
+    <HBox alignment="CENTER_LEFT" padding="$x1" prefHeight="30.0" prefWidth="-1.0" spacing="10.0" style="-fx-background-color: white;">
+      <children>
+        <TextField id="newTask" fx:id="newTaskText" focusTraversable="true" onAction="#addNewTask" prefWidth="-1.0" promptText="New tasks..." style="-fx-border-width: 0;" HBox.hgrow="ALWAYS" />
+        <Label text="" HBox.hgrow="ALWAYS">
+          <HBox.margin>
+            <Insets right="5.0" fx:id="x2" />
+          </HBox.margin>
+        </Label>
+        <ChoiceBox HBox.hgrow="SOMETIMES" HBox.margin="$x2">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="アイテム1" />
+              <String fx:value="アイテム2" />
+              <String fx:value="アイテム3" />
+            </FXCollections>
+          </items>
+        </ChoiceBox>
+      </children>
+    </HBox>
+  </children>
+  <stylesheets>
+    <URL value="@Folder.css" />
+    <URL value="@../applicationcontroller/Common.css" />
+  </stylesheets>
+</VBox>

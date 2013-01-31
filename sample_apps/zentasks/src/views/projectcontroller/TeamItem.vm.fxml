@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane id="BorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="-1.0" prefWidth="360.0" xmlns:fx="http://javafx.com/fxml" fx:controller="views.projectcontroller.TeamItem">
+  <!--%
+  <fx:define>
+    <String fx:id="email" fx:value="$user.email" />
+  </fx:define>
+  #set( $emailp = "(" + $$user.email + ")" )
+  #if( $isMember )
+    #set($handler = "#removeMember" )
+    #set($image_url = "@../icons/user-remove.png" )
+  #else
+    #set($handler = "#addMember")
+    #set($image_url = "@../icons/user-add.png" )
+  #end
+  -->
+  <center>
+    <BorderPane prefHeight="-1.0" prefWidth="-1.0">
+      <center>
+        <HBox prefHeight="-1.0" prefWidth="-1.0" spacing="5.0">
+          <children>
+            <Label style="-fx-font-weight: bold;" text="$user.name" textFill="WHITE">
+              <font>
+                <Font size="14.0" />
+              </font>
+            </Label>
+            <Label text="$emailp" textFill="WHITE">
+              <font>
+                <Font size="12.0" />
+              </font>
+            </Label>
+          </children>
+        </HBox>
+      </center>
+    </BorderPane>
+  </center>
+  <right>
+    <ImageView onMouseClicked="$handler" fitHeight="17.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="$image_url" preserveRatio="false" smooth="false" />
+      </image>
+    </ImageView>
+  </right>
+  <top>
+    <Separator prefWidth="200.0" />
+  </top>
+</BorderPane>

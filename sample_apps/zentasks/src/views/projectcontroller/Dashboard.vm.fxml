@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import creamy.scene.control.*?>
+<?import creamy.scene.layout.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="-1.0" prefWidth="-1.0" xmlns:fx="http://javafx.com/fxml" fx:controller="views.projectcontroller.Dashboard">
+  <children>
+    <!--%
+      #renderWithParams( "views.applicationcontroller.BreadCrumb", ["first", "second"], ["Dashboard", "Tasks over all projects"] )
+    -->
+    <VBox id="tasksPane" fx:id="taskBoradsPane" fillWidth="true" minHeight="-1.0" minWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" spacing="15.0">
+      <children>
+        <!--% #foreach( $project in $projects ) -->
+          <VBox prefHeight="-1.0" prefWidth="750.0" styleClass="project-board" >
+            <children>
+              <HBox alignment="CENTER_LEFT" minWidth="-1.0" prefHeight="30.0" prefWidth="-1.0" spacing="10.0">
+                <children>
+                  <!--% #set( $path = "/TaskController/index/" + $project.id ) -->
+                  <CFHyperlink path="$path" fx:id="projectLink" styleClass="project-link" text="$project.name" />
+                </children>
+                <padding>
+                  <Insets left="10.0" fx:id="x1" />
+                </padding>
+              </HBox>
+              <VBox id="tasks" fx:id="taskItemsPane" alignment="CENTER_LEFT" prefHeight="-1.0" prefWidth="-1.0" spacing="5.0" styleClass="task-item">
+                <children>
+                <!--% 
+                  #foreach( $task in $project.tasks )
+                    #renderWithParams("views.taskcontroller.Item", ["task", "editable"], [$task, false] )
+                  #end
+                -->
+                </children>
+                <VBox.margin>
+                    <Insets top="5.0" />
+                </VBox.margin>
+              </VBox>
+            </children>
+          </VBox>
+        <!--% #end -->
+      </children>
+      <VBox.margin>
+        <Insets left="15.0" right="15.0" top="15.0" />
+      </VBox.margin>
+    </VBox>
+  </children>
+  <stylesheets>
+    <URL value="@Dashboard.css" />
+  </stylesheets>
+</VBox>

@@ -1,0 +1,59 @@
+package controllers;
+
+import java.util.List;
+import creamy.mvc.*;
+import models.*;
+
+#set( $className = $scprm.modelName + "Controller" )
+public class $className extends Controller {
+
+#set( $listPath = "/" + $scprm.basePath + "/list" )
+    private static String LIST_PATH = "$listPath";
+    
+#set ( $listOfModel = "listOf" + $scprm.modelName )
+    private List<$scprm.modelName> $listOfModel;
+
+    public Result list() {
+#set( $method = $scprm.modelName + ".find.all()" )
+        $listOfModel = $method;
+        return ok(this);
+    }
+
+    private $scprm.modelName $scprm.modelVariable;
+
+    public Result show(Integer id) {
+#set( $method = $scprm.modelName + ".find.byId(id)" )
+        $scprm.modelVariable = $method;
+        return ok(this);
+    }
+
+    public Result make() {
+#set( $method = "new " + $scprm.modelName + "()" )
+        $scprm.modelVariable = $method;
+        return ok(this);
+    }
+
+    public Result edit(Integer id) {
+#set( $method = $scprm.modelName + ".find.byId(id)" )
+        $scprm.modelVariable = $method;
+        return ok(this);
+    }
+
+    public Result create($scprm.modelName $scprm.modelVariable) {
+#set( $method = $scprm.modelVariable + ".save()" )
+        $method;
+        return redirect(LIST_PATH);
+    }
+
+    public Result update(Integer id, $scprm.modelName $scprm.modelVariable) {
+#set( $method = $scprm.modelVariable + ".update(id)" )
+        $method;
+        return redirect(LIST_PATH);
+    }
+
+    public Result delete(Integer id) {
+#set( $method = $scprm.modelName + ".find.ref(id).delete()" )
+        $method;
+        return redirect(LIST_PATH);
+    }
+}
