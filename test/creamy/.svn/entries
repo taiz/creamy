@@ -1,80 +1,0 @@
-10
-
-dir
-210
-https://aiit.backlog.jp/svn/2012CA/trunk/creamy/test/creamy
-https://aiit.backlog.jp/svn/2012CA
-
-
-
-2012-11-21T07:01:08.547543Z
-208
-a1153tm
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2A3EF8CE-C06D-11E1-9057-358920795529
-
-CreamyAppTest.java
-file
-
-
-
-
-2012-11-18T15:05:17.000000Z
-f5225a947afec17ad518f9ca94bd01f3
-2012-11-18T12:18:07.013331Z
-207
-a1145ah
-
-
-svn:special svn:externals svn:needs-lock
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1096
-
-activity
-dir
-
-browser
-dir
-
-global
-dir
-
-mvc
-dir
-
-property
-dir
-
-validation
-dir
-

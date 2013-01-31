@@ -1,8 +1,0 @@
-K 10
-svn:ignore
-V 103
-.DefaultBackButtonTest.java.swp
-.DefaultBrowserMenuBarTest.java.swp
-.DefaultForwardButtonTest.java.swp
-
-END
